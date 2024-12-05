@@ -1,0 +1,20 @@
+@use "../shareables/variables" as variables;
+@use "../shareables/grid" as grid;
+
+@layer utilities {
+  .line-clamp-ellipsis {
+    @include variables.LineClampEllipsis;
+  }
+
+  .line-clamp-ellipsis-3 {
+    @include variables.LineClampEllipsis(3);
+  }
+  
+  .line-clamp-ellipsis-4 {
+    @include variables.LineClampEllipsis(4);
+  }
+
+  .container {
+    @include grid.Container;
+  }
+}

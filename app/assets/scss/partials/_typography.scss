@@ -1,0 +1,57 @@
+@layer base {
+  .hero-heading {
+    @apply font-heading text-[48px] md:text-[72px] leading-[60px] md:leading-[86px] tracking-wide;
+  }
+
+  h1,
+  .h1 {
+    @apply text-[26px] md:text-4xl leading-[34px] md:leading-[44px] font-bold;
+  }
+
+  h2,
+  .h2 {
+    @apply text-[22px] md:text-[28px] leading-[30px] md:leading-9 font-bold;
+  }
+
+  h3,
+  .h3 {
+    @apply text-xl leading-[26px] md:leading-7 font-semibold;
+  }
+
+  h4,
+  .h4 {
+    @apply text-lg leading-6 font-medium;
+  }
+
+  .text-base-regular {
+    @apply text-base leading-6 font-normal;
+  }
+  
+  .text-base-medium {
+    @apply text-base leading-6 font-medium;
+  }
+
+  .text-sm-regular {
+    @apply text-sm leading-[22px] font-normal;
+  }
+  
+  .text-sm-medium {
+    @apply text-sm leading-[22px] font-medium;
+  }
+
+  .text-xs-regular {
+    @apply text-xs leading-5 font-normal;
+  }
+  
+  .text-xs-medium {
+    @apply text-xs leading-[22px] font-medium;
+  }
+
+  a {
+    @apply text-gold-champagne transition;
+
+    &:hover {
+      @apply text-gold;
+    }
+  }
+}
