@@ -1,5 +1,5 @@
 <template>
-  <div class="relative top-[-72px] h-screen overflow-hidden">
+  <section class="relative top-[-72px] h-screen overflow-hidden">
     <video
       autoplay
       muted
@@ -28,11 +28,11 @@
       />
       
       <h1
-        class="hero-heading uppercase text-gold-champagne"
+        class="hero-heading uppercase text-champagne"
         v-text="heading"
       />
       <h2
-        class="text-base-regular text-gold-champagne mt-4 py-2 px-8 border-y border-gold-dark"
+        class="text-base-regular text-champagne mt-6 py-2 px-8 border-y border-gold-dark"
         v-text="subtitle"
       />
 
@@ -51,7 +51,7 @@
     <div class="absolute bottom-0 left-1/2 -translate-x-1/2 text-center">
       <ChevronDownIcon class="w-6 h-6 text-gold animate-bounce" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

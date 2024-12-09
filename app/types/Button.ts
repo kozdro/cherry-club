@@ -5,7 +5,9 @@ export enum ButtonWidth {
 
 export enum ButtonVariant {
   Primary = 'primary',
-  Secondary = 'secondary'
+  Secondary = 'secondary',
+  Tertiary = 'tertiary',
+  Outline = 'outline'
 }
 
 export enum ButtonSize {

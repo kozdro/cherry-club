@@ -11,7 +11,7 @@
           />
           <p
             v-if="data.description"
-            class="self-center text-gold-champagne"
+            class="self-center text-champagne"
             v-text="data.description"
           />
         </div>
@@ -20,28 +20,40 @@
             v-for="social in data.socials"
             :key="social.id"
             :to="social.link"
-            class="w-fit h-fit rounded p-2 bg-gold-champagne hover:bg-gold-dark flex items-center justify-center"
+            class="w-fit h-fit rounded p-2 bg-gold-dark flex items-center justify-center group transition"
           >
             <FacebookIcon
               v-if="social.link?.includes('facebook')"
-              class="text-gray w-6 h-6"
+              class="text-champagne group-hover:text-cherry w-6 h-6 transition"
             />
             <InstagramIcon
               v-else-if="social.link?.includes('instagram')"
-              class="text-gray w-6 h-6"
+              class="text-champagne group-hover:text-cherry w-6 h-6 transition"
             />
           </NuxtLink>
         </div>
       </div>
 
       <div class="flex gap-10">
-        <div class="basis-1/2 flex items-center gap-2">
-          <input class="h-[52px] w-1/2 rounded-md p-2" placeholder="Email">
-          <Button
-            :variant="ButtonVariant.Secondary"
-            label="Zapisz się"
+        <form
+          class="basis-1/2 flex items-center gap-2"
+          @submit.prevent="handleSubscription"
+        >
+          <Input
+            v-model="email"
+            type="email"
+            required
+            background-color="cherry"
+            label="Email"
+            class="!w-1/2"
           />
-        </div>
+          <Button
+            :variant="(data.newsletterCTA?.variant as ButtonVariant)"
+            type="submit"
+            :label="data.newsletterCTA?.text"
+            class=""
+          />
+        </form>
         <div class="basis-1/2 flex justify-end gap-20">
           <ul
             v-for="group in data.linkGroup"
@@ -81,7 +93,16 @@
 <script setup lang="ts">
 import FacebookIcon from '@/assets/icons/facebook.svg?skipsvgo'
 import InstagramIcon from '@/assets/icons/instagram.svg?skipsvgo'
-import { ButtonVariant } from '~/types/Button';
+import Input from '@/components/shared/Input.vue'
+import Button from '@/components/shared/Button.vue'
+
+import { ButtonVariant } from '@/types/Button'
 
 const { data } = useCmsContent('footer')
+
+const email = ref<string>('')
+
+const handleSubscription = () => {
+  console.log(email.value)
+}
 </script>

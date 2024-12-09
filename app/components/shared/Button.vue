@@ -32,7 +32,7 @@ import { ButtonWidth, ButtonVariant, ButtonSize } from '@/types/Button'
 
 const ButtonWidthClasses = {
   [ButtonWidth.Fit]: 'w-fit',
-  [ButtonWidth.Full]: 'w-full'
+  [ButtonWidth.Full]: 'w-full md:max-w-80'
 }
 
 const ButtonSizeClasses = {
@@ -41,8 +41,10 @@ const ButtonSizeClasses = {
 }
 
 const ButtonVariantClasses = {
-  [ButtonVariant.Primary]: 'text-white bg-cherry border-transparent hover:!text-white hover:bg-gold disabled:bg-gray disabled:text-white',
-  [ButtonVariant.Secondary]: 'text-gold bg-transparent border-gold hover:!text-cherry hover:bg-gold-champagne disabled:border-gray disabled:text-black',
+  [ButtonVariant.Primary]: 'text-champagne bg-cherry border-transparent hover:!text-champagne hover:bg-gold disabled:bg-grey disabled:text-champagne',
+  [ButtonVariant.Secondary]: 'text-gold bg-transparent border-gold hover:!text-cherry hover:bg-champagne disabled:border-grey disabled:text-black',
+  [ButtonVariant.Tertiary]: 'text-champagne bg-black border-transparent hover:!text-champagne hover:bg-cherry disabled:bg-grey disabled:text-champagne',
+  [ButtonVariant.Outline]: 'text-black bg-transparent border-black hover:!text-chamapagne hover:bg-black hover:border-black disabled:border-grey disabled:text-grey',
 }
 
 interface Props {
