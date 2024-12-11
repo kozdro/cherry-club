@@ -17,6 +17,12 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-svgo',
     '@nuxt/image',
+    [
+      '@storyblok/nuxt',
+      {
+        accessToken: 'OGKES9ieCiqdiQkj63xPoQtt',
+      },
+    ],
   ],
   components: [
     {
@@ -33,11 +39,6 @@ export default defineNuxtConfig({
     families: {
       Lora: [400, 500, 600, 700],
       Montserrat: [400, 500, 600, 700]
-    }
-  },
-  image: {
-    strapi: {
-      baseURL: process.env.STRAPI_URL
     }
   },
 })

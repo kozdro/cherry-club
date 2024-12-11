@@ -9,7 +9,7 @@
     :disabled="disabled || loading"
     :type="href ? null : (type === 'submit' ? 'submit' : 'button')"
     :target="openInNewWindow ? '_blank' : '_self'"
-    class="button relative px-4 transition duration-200 ease-out inline-flex items-center justify-center shrink-0 border rounded-md cursor-pointer disabled:pointer-events-none"
+    class="button relative px-4 transition duration-200 ease-out inline-flex items-center justify-center shrink-0 border rounded-full cursor-pointer disabled:pointer-events-none"
     :class="[
       ButtonWidthClasses[width],
       ButtonVariantClasses[variant],

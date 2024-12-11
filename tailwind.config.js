@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [],
+  content: [
+    'app/storyblok/**/*.{vue,js}',
+    'app/components/**/*.{vue,js}',
+    'app/pages/**/*.vue',
+    'app/layouts/**/*.vue'
+  ],
   safelist: [
     {
       pattern: /bg-(transparent|black|white|cherry|champagne|gold|gold-dark|grey|grey-pearl)/,

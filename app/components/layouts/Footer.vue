@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-cherry pt-20 pb-4">
+  <footer class="cherry-background pt-20 pb-4">
     <div class="container flex flex-col gap-6">
       <div class="flex gap-10">
         <div class="basis-1/2 flex gap-6">
@@ -51,7 +51,6 @@
             :variant="(data.newsletterCTA?.variant as ButtonVariant)"
             type="submit"
             :label="data.newsletterCTA?.text"
-            class=""
           />
         </form>
         <div class="basis-1/2 flex justify-end gap-20">

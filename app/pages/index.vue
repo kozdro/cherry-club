@@ -1,11 +1,10 @@
 <template>
-  <div class="home flex flex-col gap-12 xl:gap-20">
-    <CMSSections :sections="data?.components" />
-  </div>
+  <StoryblokComponent
+    v-if="story"
+    :blok="story.content"
+  />
 </template>
 
 <script setup lang="ts">
-import CMSSections from '@/components/CMSSections.vue'
-
-const { data } = useCmsPage('home')
+const story = await useAsyncStoryblok('pages/home', { version: 'draft' })
 </script>
