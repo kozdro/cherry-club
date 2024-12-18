@@ -12,7 +12,7 @@
     </div>
 
     <div class="grow flex items-center justify-between w-full h-full gap-4 p-4">
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 pointer-events-none">
         <h3 v-text="name" />
         <span
           v-if="type"
@@ -24,9 +24,9 @@
         v-if="link?.url"
         :href="link.url"
         :target="link.target"
-        class="w-10 h-10 p-2 rounded-full bg-gold-dark flex items-center justify-center"
+        class="w-fit h-fit p-2 bg-gold-dark flex items-center justify-center group rounded-full"
       >
-        <PlayIcon class="text-gold-champagne" />
+        <PlayIcon class="text-grey-dark group-hover:text-gold-champagne w-6 h-6 transition" />
       </a>
     </div>
   </div>

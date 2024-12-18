@@ -3,7 +3,7 @@
     autoFill
     :direction="direction"
     :speed="(blok.speed as number)"
-    :class="`animated-placeholder bg-${blok.color} py-2`"
+    :class="`animated-placeholder bg-${blok.color} py-2 pointer-events-none select-none`"
   >
     <span
       v-if="blok?.text"

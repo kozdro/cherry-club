@@ -45,13 +45,14 @@
           </div>
         </time>
 
-        <NuxtLink
+        <a
           v-if="facebook_event?.url"
-          :to="facebook_event.url"
-          class="w-fit h-fit p-2 bg-gold-dark flex items-center justify-center group transition rounded-xl"
+          :href="facebook_event.url"
+          target="_blank"
+          class="w-fit h-fit p-2 bg-gold-dark flex items-center justify-center group rounded-xl"
         >
           <FacebookIcon class="text-grey-dark group-hover:text-gold-champagne w-6 h-6 transition" />
-        </NuxtLink>
+        </a>
       </div>
 
       <h3
