@@ -7,4 +7,5 @@ export interface Event {
   date: string
   links?: CTA[]
   facebook_event?: Url
+  link?: string
 }

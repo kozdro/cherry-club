@@ -40,7 +40,7 @@
         format="webp"
         loading="lazy"
         fit="cover"
-        class="w-full h-full object-cover object-center rounded-xl hover:scale-105 transition-transform duration-300"
+        class="w-full h-full object-cover object-center rounded-xl hover:scale-[1.03] transition-transform duration-300"
       />
     </a>
   </section>

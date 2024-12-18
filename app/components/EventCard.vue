@@ -77,11 +77,16 @@
 
 <script setup lang="ts">
 import { ButtonVariant, ButtonWidth } from '~/types/Button'
-import type { Image, Link, Url, Event } from '~/types/storyblok'
+import type { Event } from '~/types/storyblok'
 
 import FacebookIcon from '@/assets/icons/facebook.svg?skipsvgo'
 
-const props = defineProps<Event>()
+interface Props extends Event {
+  link?: string
+  timestamp?: string
+}
+
+const props = defineProps<Props>()
 
 const parseDate = (dateString: string) => {
   const date = new Date(dateString.replace(' ', 'T'))

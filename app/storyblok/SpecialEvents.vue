@@ -1,7 +1,7 @@
 <template>
   <section
     v-editable="blok"
-    class="special-events flex items-stretch justify-between gap-16"
+    class="special-events flex items-stretch justify-between gap-16 py-16"
   >
     <div class="flex flex-col pl-24">
       <h2
@@ -19,6 +19,7 @@
         class="self-end mt-auto mb-10"
       />
     </div>
+
     <div class="w-full overflow-hidden py-10">
       <div class="container">
         <Slider

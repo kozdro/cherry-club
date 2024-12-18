@@ -34,6 +34,7 @@
           <Button
             v-if="blok.cta?.[0]"
             :variant="ButtonVariant.Primary"
+            :size="ButtonSize.Large"
             :href="blok.cta[0].link?.url"
             :target="blok.cta[0].link?.target"
             :label="blok.cta[0].label"
@@ -51,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import { ButtonVariant } from '~/types/Button'
+import { ButtonSize, ButtonVariant } from '~/types/Button'
 import type { AnimatedPlaceholder, Image, CTA } from '~/types/storyblok'
 
 interface Props {
