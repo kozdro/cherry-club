@@ -16,14 +16,17 @@
       <div class="bg-black/70 absolute inset-0 w-full h-full z-0" />
 
       <div
-        class="container flex gap-16 z-10 relative"
-        :class="blok.layout === 'horizontal' ? 'flex-row items-center' : 'flex-col'"
+        class="container flex gap-16 z-10 relative items-center"
+        :class="blok.layout === 'horizontal' ? 'flex-row' : 'flex-col text-center'"
       >
         <h2
-          :class="blok.layout === 'horizontal' ? 'max-w-[30rem] ml-auto' : 'w-3/4'"
+          :class="blok.layout === 'horizontal' ? 'max-w-[30rem] ml-auto' : 'w-1/2'"
           v-text="blok.heading"
         />
-        <div :class="blok.layout === 'horizontal' ? 'max-w-[30rem] mr-auto flex flex-col gap-10' : 'w-3/4'">
+        <div
+          class="flex flex-col gap-10"
+          :class="blok.layout === 'horizontal' ? 'max-w-[30rem] mr-auto' : 'w-1/2 items-center'"
+        >
           <p
             v-if="blok.subheading"
             v-text="blok.subheading"

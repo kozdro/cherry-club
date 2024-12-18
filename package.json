@@ -19,6 +19,7 @@
     "nuxt-marquee": "^1.0.4",
     "nuxt-svgo": "^4.0.9",
     "nuxt-swiper": "^2.0.0",
+    "photoswipe": "^5.4.4",
     "vue": "latest",
     "vue-router": "latest"
   },
