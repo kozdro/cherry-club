@@ -1,111 +1,75 @@
 <template>
-  <div
-    class="input flex items-end w-full relative my-2"
-    :class="{
-      'pointer-events-none': disabled,
-    }"
-  >
-    <FormFieldLabel
-      v-if="label || $slots.label"
-      :label="label"
-      :required="required"
-      :invalid="!!errorMessage"
+  <div class="input w-full relative">
+    <input
+      :id="id"
+      v-model="localValue"
+      :type="type"
+      :placeholder="placeholder"
       :disabled="disabled"
-      :selected="!!isAffected"
-      :focused="isFocused"
-      :background-color="backgroundColor"
-    >
-      <template #label>
-        <slot name="label" />
-      </template>
-    </FormFieldLabel>
-    <div
-      class="border border-grey rounded-md focus-within:border-gold h-full w-full flex items-center z-base px-3 pb-2 pt-4 transition-all duration-200"
+      :required="required"
+      class="w-full bg-transparent border-b-2 text-champagne text-lg p-2 transition-colors duration-300 focus:outline-none disabled:text-grey disabled:border-grey disabled:pointer-events-none placeholder:text-grey"
       :class="{
-        '!border-error': !!errorMessage,
-        '!border-gold': localValue && isFocused,
-        'bg-grey-dark': disabled,
+        'border-grey': !error && !isFocused,
+        'border-gold-dark': isFocused,
+        'border-error-dark': error,
       }"
-    >
-      <input
-        v-model="localValue"
-        v-bind="$attrs"
-        :id="id"
-        ref="inputRef"
-        :aria-label="inputAriaLabel"
-        :disabled="disabled"
-        :type="type"
-        class="w-full bg-transparent focus:outline-none text-base leading-normal text-gold-champagne placeholder:text-grey disabled:text-grey truncate"
-        @blur="handleBlur"
-        @focus="handleFocus"
-      >
-    </div>
+      @input="handleInput"
+      @focus="isFocused = true"
+      @blur="handleBlur"
+    />
 
-    <div
-      v-if="errorMessage"
-      class="absolute top-full text-error text-sm"
-    >
-      {{ errorMessage }}
-    </div>
+    <label
+      v-if="label"
+      :for="id"
+      class="absolute left-0 -top-6 text-sm text-grey transition-all duration-300 pointer-events-none"
+      :class="{
+        'text-gold-dark': isFocused,
+        'text-error-dark': error,
+      }"
+      v-text="label"
+    />
+
+    <span
+      v-if="error"
+      class="text-error-dark text-sm absolute left-0 top-full mt-2 mx-1 text-left"
+      v-text="error"
+    />
   </div>
 </template>
 
-<script lang="ts" setup>
-import FormFieldLabel from '@/components/shared/FormFieldLabel.vue'
-
+<script setup lang="ts">
 interface Props {
-  ariaLabel?: string
-  disabled?: boolean
-  errorMessage?: string
-  id?: string
-  label?: string
-  required?: boolean
+  modelValue: string
   type?: string
-  modelValue: string | number
-  backgroundColor?: string
+  placeholder?: string
+  label?: string
+  error?: string
+  disabled?: boolean
+  id?: string
+  required?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  ariaLabel: '',
-  disabled: false,
-  errorMessage: '',
-  id: '',
-  label: '',
-  required: false,
   type: 'text',
-  backgroundColor: 'white',
+  placeholder: '',
+  label: '',
+  error: '',
+  disabled: false,
+  id: 'input',
+  required: false,
 })
 
-const emit = defineEmits<{
-  (e: 'update:modelValue', value: string | number): void,
-  (e: 'input', value: number | string): void,
-  (e: 'blur'): void,
-  (e: 'focus'): void,
-}>()
+const emit = defineEmits(['update:modelValue', 'blur', 'focus'])
 
-const attrs = useAttrs()
+const localValue = ref(props.modelValue)
+const isFocused = ref<boolean>(false)
 
-const isFocused = ref(false)
-
-const localValue = computed({
-  get() {
-    return props.modelValue
-  },
-  set(value) {
-    emit('update:modelValue', value)
-  }
-})
-
-const isAffected = computed(() => !!props.modelValue || isFocused.value || attrs.placeholder)
-
-const inputAriaLabel = computed(() => `${props.ariaLabel || props.label || 'input'}`)
-
-const handleFocus = () => {
-  emit('focus')
-  isFocused.value = true
+const handleInput = () => {
+  emit('update:modelValue', localValue.value)
 }
+
 const handleBlur = () => {
-  emit('blur')
   isFocused.value = false
+  emit('blur')
 }
 </script>

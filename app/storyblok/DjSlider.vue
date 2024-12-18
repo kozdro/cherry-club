@@ -8,6 +8,7 @@
         <h2 v-text="blok.heading" />
         <p
           v-if="blok.subheading"
+          class="uppercase"
           v-text="blok.subheading"
         />
       </div>
