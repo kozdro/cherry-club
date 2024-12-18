@@ -53,7 +53,7 @@ const storyblokApi = useStoryblokApi()
 const { data: events } = await useAsyncData('events', async () => {
   const { data } = await storyblokApi.get('cdn/stories', {
     starts_with: 'pages/events/',
-    version: 'draft',
+    version: 'published',
   })
 
   return data.stories?.map((event) => {

@@ -6,5 +6,5 @@
 </template>
 
 <script setup lang="ts">
-const story = await useAsyncStoryblok('pages/home', { version: 'draft' })
+const story = await useAsyncStoryblok('pages/home', { version: 'published' })
 </script>

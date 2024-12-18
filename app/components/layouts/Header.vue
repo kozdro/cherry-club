@@ -12,7 +12,7 @@
           class="flex items-center"
         >
           <img
-            src="../../assets/images/full_logo.png"
+            src="~/assets/images/full_logo.png"
             alt="logo"
             class="w-16 transition-opacity duration-300"
             :class="scrolled ? 'opacity-80' : 'opacity-100'"
