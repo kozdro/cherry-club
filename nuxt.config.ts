@@ -17,6 +17,14 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-svgo',
     '@nuxt/image',
+    [
+      '@storyblok/nuxt',
+      {
+        accessToken: 'OGKES9ieCiqdiQkj63xPoQtt',
+      },
+    ],
+    'nuxt-swiper',
+    'nuxt-marquee',
   ],
   components: [
     {
@@ -31,13 +39,9 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      Lora: [400, 500, 600, 700],
-      Montserrat: [400, 500, 600, 700]
-    }
-  },
-  image: {
-    strapi: {
-      baseURL: process.env.STRAPI_URL
+      'Playfair Display': [400, 500, 600, 700],
+      Poppins: [300, 400, 500, 600, 700],
+      Montserrat: [300, 400, 500, 600, 700]
     }
   },
 })

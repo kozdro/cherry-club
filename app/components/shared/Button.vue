@@ -9,7 +9,7 @@
     :disabled="disabled || loading"
     :type="href ? null : (type === 'submit' ? 'submit' : 'button')"
     :target="openInNewWindow ? '_blank' : '_self'"
-    class="button relative px-4 transition duration-200 ease-out inline-flex items-center justify-center shrink-0 border rounded-md cursor-pointer disabled:pointer-events-none"
+    class="button relative transition duration-200 ease-out inline-flex items-center justify-center shrink-0 border rounded-full cursor-pointer disabled:pointer-events-none"
     :class="[
       ButtonWidthClasses[width],
       ButtonVariantClasses[variant],
@@ -24,27 +24,35 @@
         v-text="label"
       />
     </slot>
+    <ArrowRightIcon
+      v-if="variant === ButtonVariant.Link"
+      class="w-4 ml-4"
+    />
   </component>
 </template>
 
 <script lang="ts" setup>
 import { ButtonWidth, ButtonVariant, ButtonSize } from '@/types/Button'
 
+import ArrowRightIcon from '@/assets/icons/arrow-right.svg?skipsvgo'
+
 const ButtonWidthClasses = {
   [ButtonWidth.Fit]: 'w-fit',
-  [ButtonWidth.Full]: 'w-full md:max-w-80'
+  [ButtonWidth.Full]: 'w-full'
 }
 
 const ButtonSizeClasses = {
-  [ButtonSize.Small]: 'h-[38px]',
-  [ButtonSize.Regular]: 'h-[52px]'
+  [ButtonSize.Small]: 'h-[36px] px-4 text-sm',
+  [ButtonSize.Regular]: 'h-[48px] px-6 text-base',
+  [ButtonSize.Large]: 'h-[60px] px-8 text-lg',
 }
 
 const ButtonVariantClasses = {
-  [ButtonVariant.Primary]: 'text-champagne bg-cherry border-transparent hover:!text-champagne hover:bg-gold disabled:bg-grey disabled:text-champagne',
-  [ButtonVariant.Secondary]: 'text-gold bg-transparent border-gold hover:!text-cherry hover:bg-champagne disabled:border-grey disabled:text-black',
-  [ButtonVariant.Tertiary]: 'text-champagne bg-black border-transparent hover:!text-champagne hover:bg-cherry disabled:bg-grey disabled:text-champagne',
-  [ButtonVariant.Outline]: 'text-black bg-transparent border-black hover:!text-chamapagne hover:bg-black hover:border-black disabled:border-grey disabled:text-grey',
+  [ButtonVariant.Primary]: 'text-black bg-gold border-transparent hover:text-gold-champagne hover:bg-black disabled:bg-grey-dark disabled:text-grey',
+  [ButtonVariant.Secondary]: 'text-gold bg-transparent border-gold hover:text-black hover:bg-gold disabled:border-grey-dark disabled:text-grey',
+  [ButtonVariant.Tertiary]: 'text-grey bg-black border-transparent hover:text-gold hover:bg-grey-dark disabled:bg-grey-dark disabled:text-grey',
+  [ButtonVariant.Outline]: 'text-black bg-transparent border-black hover:text-gold-champagne hover:bg-black hover:border-gold disabled:border-grey-dark disabled:text-grey',
+  [ButtonVariant.Link]: 'text-gold-champagne !font-normal border-transparent'
 }
 
 interface Props {

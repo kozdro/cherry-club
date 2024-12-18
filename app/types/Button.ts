@@ -1,16 +1,18 @@
 export enum ButtonWidth {
   Fit = 'fit',
-  Full = 'full'
+  Full = 'full',
 }
 
 export enum ButtonVariant {
   Primary = 'primary',
   Secondary = 'secondary',
   Tertiary = 'tertiary',
-  Outline = 'outline'
+  Outline = 'outline',
+  Link = 'link',
 }
 
 export enum ButtonSize {
   Small = 'small',
-  Regular = 'regular'
+  Regular = 'regular',
+  Large = 'large',
 }

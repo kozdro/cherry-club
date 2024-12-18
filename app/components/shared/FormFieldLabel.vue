@@ -1,8 +1,8 @@
 <template>
   <label
-    class="absolute transition -translate-y-1/2 pl-3 flex items-center text-champagne"
+    class="absolute transition -translate-y-1/2 pl-3 flex items-center text-grey"
     :class="{
-      [`-translate-y-[40px] bg-${backgroundColor} z-label text-sm pb-0 !px-1 ml-2 cursor-default`]: selected,
+      [`-translate-y-[40px] bg-${backgroundColor} z-[15] text-sm pb-0 !px-1 ml-2 cursor-default`]: selected,
       '!text-gold': focused,
       '!text-error': invalid,
       'pointer-events-none': disabled
