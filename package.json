@@ -5,9 +5,10 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
-    "generate": "nuxt generate",
+    "generate": "nuxi generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "npm run generate && gh-pages -d .output/public"
   },
   "dependencies": {
     "@nuxt/image": "^1.8.1",
@@ -26,6 +27,7 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "sass-embedded": "^1.81.0"
   }
 }

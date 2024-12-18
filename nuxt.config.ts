@@ -1,5 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    baseURL: '/cherry-club/'
+  },
+  nitro: {
+    preset: 'static',
+  },
   runtimeConfig: {
     public: {
       STRAPI_URL: process.env.STRAPI_URL
