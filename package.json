@@ -16,7 +16,9 @@
     "@storyblok/nuxt": "^6.2.0",
     "htmlparser2": "^9.1.0",
     "nuxt": "^3.14.1592",
+    "nuxt-marquee": "^1.0.4",
     "nuxt-svgo": "^4.0.9",
+    "nuxt-swiper": "^2.0.0",
     "vue": "latest",
     "vue-router": "latest"
   },

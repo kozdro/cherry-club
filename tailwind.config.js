@@ -4,14 +4,14 @@ export default {
     'app/storyblok/**/*.{vue,js}',
     'app/components/**/*.{vue,js}',
     'app/pages/**/*.vue',
-    'app/layouts/**/*.vue'
+    'app/layouts/**/*.vue',
   ],
   safelist: [
     {
-      pattern: /bg-(transparent|black|white|cherry|champagne|gold|gold-dark|grey|grey-pearl)/,
+      pattern: /bg-(transparent|black|white|grey|grey-dark|gold|gold-dark|gold-champagne)/,
     },
     {
-      pattern: /text-(transparent|black|white|cherry|champagne|gold|gold-dark|grey|grey-pearl)/,
+      pattern: /text-(transparent|black|white|grey|grey-dark|gold|gold-dark|gold-champagne)/,
     },
   ],
   theme: {
@@ -21,36 +21,36 @@ export default {
       transparent: 'transparent',
       black: '#000000',
       white: '#FFFFFF',
-      cherry: '#8B0000',
-      champagne: {
-        DEFAULT: '#F4E1C1',
+      grey: {
+        DEFAULT: '#D1D1D1',
+        dark: '#1E1E1E',
       },
       gold: {
         DEFAULT: '#B39F6D',
-        dark: '#C49E4D',
+        dark: '#8B7C5A',
+        champagne: '#F4E3C7',
       },
-      grey: {
-        DEFAULT: '#D3D3D3',
-        pearl: '#A9A9A9',
-      },
-      'neon-blue': '#00BFFF'
+      error: {
+        DEFAULT: '#D95C5C',
+        dark: '#B04040',
+      }
     },
     screens: {
       sm: '340px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
-      '2xl': '1440px'
+      '2xl': '1440px',
     },
     fontFamily: {
-      heading: ['Lora', 'serif'],
-      body: ['Montserrat', 'sans-serif']
+      serif: ['Playfair Display', 'serif'],
+      sans: ['Poppins', 'sans-serif'],
     },
     extend: { 
       sizing: {
         grid: {
-          container: '90rem'
-        }
+          container: '90rem',
+        },
       },
       keyframes: {
         slideUp: {
@@ -65,7 +65,7 @@ export default {
   },  
   plugins: [],
   corePlugins: {
-    container: false
-  }
+    container: false,
+  },
 }
 

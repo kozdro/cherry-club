@@ -23,6 +23,8 @@ export default defineNuxtConfig({
         accessToken: 'OGKES9ieCiqdiQkj63xPoQtt',
       },
     ],
+    'nuxt-swiper',
+    'nuxt-marquee',
   ],
   components: [
     {
@@ -37,8 +39,9 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      Lora: [400, 500, 600, 700],
-      Montserrat: [400, 500, 600, 700]
+      'Playfair Display': [400, 500, 600, 700],
+      Poppins: [300, 400, 500, 600, 700],
+      Montserrat: [300, 400, 500, 600, 700]
     }
   },
 })

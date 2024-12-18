@@ -20,10 +20,11 @@
       </template>
     </FormFieldLabel>
     <div
-      class="border border-grey rounded-md focus-within:border-gold h-full w-full flex items-center z-base px-3 pb-2 pt-4"
+      class="border border-grey rounded-md focus-within:border-gold h-full w-full flex items-center z-base px-3 pb-2 pt-4 transition-all duration-200"
       :class="{
-        '!border-red': !!errorMessage,
+        '!border-error': !!errorMessage,
         '!border-gold': localValue && isFocused,
+        'bg-grey-dark': disabled,
       }"
     >
       <input
@@ -34,7 +35,7 @@
         :aria-label="inputAriaLabel"
         :disabled="disabled"
         :type="type"
-        class="w-full bg-transparent focus:outline-0 focus-visible:outline-none text-base leading-normal text-champagne placeholder:text-champagne disabled:text-grey truncate"
+        class="w-full bg-transparent focus:outline-none text-base leading-normal text-gold-champagne placeholder:text-grey disabled:text-grey truncate"
         @blur="handleBlur"
         @focus="handleFocus"
       >
@@ -42,7 +43,7 @@
 
     <div
       v-if="errorMessage"
-      class="absolute top-full text-red text-sm"
+      class="absolute top-full text-error text-sm"
     >
       {{ errorMessage }}
     </div>
