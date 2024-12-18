@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    wydarzenia slug
   </div>
 </template>
 
